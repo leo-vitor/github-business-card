@@ -11,10 +11,12 @@ export default function Orgs({route}) {
     return (
 
         <View style={[styles.container,]}>
-            <Text>{params.OrgsUrl}</Text>
+            <View style={styles.infoContainer}>
+
             {orgs.map(org=>(
                 <Text key = {org.id} style={[styles.text,]}>{org.login} </Text>
             ))}
+            </View>
                
         
         </View>    
@@ -24,11 +26,26 @@ export default function Orgs({route}) {
 const styles = StyleSheet.create({
 
     container: {
-        paddingHorizontal: 10,
-        gap:10,
+        flex: 1,
+        backgroundColor: "#f7f8fc",
+        alignItems : 'flex-start',
+        alignContent: 'flex-start',
     },
     text: {
         fontSize: 20,
+        fontFamily: "monospace",
+        textAlign: "flex-start",
+    },
+    infoContainer: {
+        width:'100%',
+        height:"100%",
+        margin: 20,
+        marginHorizontal: 50,
+        padding: 10,
+        borderRadius: 25,
+        alignItems : 'flex-start',
+        alignContent: 'flex-start',
+        backgroundColor:"white",
     },
 
 })

@@ -11,9 +11,12 @@ export default function Repos({route}) {
     return (
 
         <View style={[styles.container,]}>
+            <View style={styles.infoContainer}>
+
             {repos.map(repo=>(
                 <Text key = {repo.id} style={[styles.text,]}>{repo.name} </Text>
             ))}
+            </View>
                
         
         </View>    
@@ -23,11 +26,22 @@ export default function Repos({route}) {
 const styles = StyleSheet.create({
 
     container: {
-        paddingHorizontal: 10,
-        gap:10,
+        flex: 1,
+        backgroundColor: "#f7f8fc",
+
     },
     text: {
         fontSize: 20,
+        fontFamily: "monospace",
+    },
+    infoContainer: {
+        width:'100%',
+        height:"100%",
+        margin: 20,
+        marginHorizontal: 10,
+        padding: 10,
+        borderRadius: 25,
+        backgroundColor:"white",
     },
 
 })

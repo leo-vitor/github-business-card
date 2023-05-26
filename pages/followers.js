@@ -11,9 +11,11 @@ export default function Followers({route}) {
     return (
 
         <View style={[styles.container,]}>
+            <View style={styles.infoContainer}>
             {followers.map(follower=>(
                 <Text key = {follower.id} style={[styles.text,]}>{follower.login} </Text>
             ))}
+            </View>
                
         
         </View>    
@@ -23,11 +25,26 @@ export default function Followers({route}) {
 const styles = StyleSheet.create({
 
     container: {
-        paddingHorizontal: 10,
-        gap:10,
+        flex: 1,
+        alignContent: "center",
+        alignItems: "center",
+        backgroundColor: "#f7f8fc",
+
     },
     text: {
         fontSize: 20,
+        fontFamily: "monospace",
+    },
+    infoContainer: {
+        width:'100%',
+        height:"100%",
+        margin: 20,
+        marginHorizontal: 50,
+        padding: 10,
+        borderRadius: 25,
+        alignContent: "center",
+        alignItems: "center",
+        backgroundColor:"white",
     },
 
 })
